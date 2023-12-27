@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Install dependencies
-      run: make Install
+      run: make install
 
     - name: format code
       run: make format

@@ -1,3 +1,7 @@
+## GitHub Actions WorkFlow Badge
+** [![Makefile CI](https://github.com/bjcloudac/microservices_fastAPI/actions/workflows/makefile.yml/badge.svg)](https://github.com/bjcloudac/microservices_fastAPI/actions/workflows/makefile.yml)
+
+
 # microservices_fastAPI
 * Scaffold
   * MakeFile

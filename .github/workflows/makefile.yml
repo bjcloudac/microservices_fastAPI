@@ -19,6 +19,9 @@ jobs:
 
     - name: format code
       run: make format
-
+    - name: check the code
+      run: make lint
+    - name: test the code
+      run: make test
 
     

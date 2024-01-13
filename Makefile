@@ -8,9 +8,13 @@ format:
 	black *.py mylib/*.py
 lint:
 	# We can use some other linter like flake8 if we want
-	pylint --disable=R,C *.py mylib/*.py
+	pylint --disable=R,C *.py mylib/*.py # disabled some pylint checks such as recommendations, confurations and conventions
 test:
-	python -m pytest -vv --cov=mylib test_logic.py 
+	python -m pytest -vv --cov=mylib test_logic.py 		# run pytest
+build:
+	# We can use some other build tool like docker 
+	#python setup.py sdist bdist_wheel
+
 deploy:
 	# We can use some other deployment tool like ansible if we want
 	

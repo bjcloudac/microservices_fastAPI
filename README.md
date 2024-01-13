@@ -19,6 +19,7 @@
 6. Create Docker file by `touch Dockerfile`
 7. Create Make file by `touch Makefile`
 8. Crate a directory called `mylib`
-9. Under mylib create init.py by `touch mylib/__init__.py` and `touch mylib/logic.py`
-10. `touch main.py`
-   
+9. Under mylib create init.py by `touch mylib/__init__.py` - essentially serves as a constructor  and `touch mylib/logic.py`
+10. `touch main.py`   
+With all those above, our Scaffold structure is complete. Write logic in mylib/logic.py
+ # Now we need to populate the Makefile for the project

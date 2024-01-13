@@ -22,4 +22,40 @@
 9. Under mylib create init.py by `touch mylib/__init__.py` - essentially serves as a constructor  and `touch mylib/logic.py`
 10. `touch main.py`   
 With all those above, our Scaffold structure is complete. Write logic in mylib/logic.py
- # Now we need to populate the Makefile for the project
+ # Now we need to populate the Makefile for the project as shown in the Makefile
+   
+install:
+	# We can use some other package manager like poetry if we want and we can also use a virtual environment
+	pip install --upgrade pip &&\
+	pip install -r requirements.txt
+
+format:
+	# format code with black
+	black *.py mylib/*.py
+lint:
+	# We can use some other linter like flake8 if we want
+	pylint --disable=R,C *.py mylib/*.py # disabled some pylint checks such as recommendations, confurations and conventions
+test:
+	python -m pytest -vv --cov=mylib test_logic.py 		# run pytest
+build:
+	# We can use some other build tool like docker 
+	#python setup.py sdist bdist_wheel
+
+deploy:
+	# We can use some other deployment tool like ansible if we want
+	
+all: install lint test
+
+# Now we shall introduce python Fire CLI tool for converting our wiki function as a commandline tool like following
+
+`toich fire_cli.py`
+#!/usr/bin/env python
+
+import fire
+from mylib.logic import wiki
+
+if __name__ == '__main__':
+    fire.Fire(wiki)
+# make it runnable by
+`chmod +x fire_cli.py`
+# test it for functionality with `./fire_cli.py`. and `./fire_cli.py --help`
